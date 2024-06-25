@@ -1,11 +1,18 @@
+var swiperWrapper = document.getElementById('swiper-wrapper')
+swiperWrapper.style.margin=" 0 0 0 373px"
+
 document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(() => {
+        swiperWrapper.style.margin=" 0 0 0 746px";
+    }, 1825);
+
     var swiper = new Swiper('.swiper-container', {
         loop: true,
         slidesPerView: 3,
         centeredSlides: true,
         spaceBetween: 20,
         autoplay: {
-            delay: 2000,
+            delay: 1700,
             disableOnInteraction: false,
         },
         on: {
@@ -18,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateActiveSlide() {
         var slides = document.querySelectorAll('.swiper-slide');
         slides.forEach(slide => slide.classList.remove('swiper-slide-center', 'swiper-slide-inactive'));
-
+      
         var activeIndex = swiper.activeIndex;
         var totalSlides = slides.length;
 
